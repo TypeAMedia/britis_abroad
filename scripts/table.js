@@ -29,6 +29,7 @@ function Table(params) {
       cellWidth: 76,
       gapWidth: 8,
       headerHeight: 83,
+      colors: [],
       firstColumnWidth: {
         // city column width (varies based on screen size),
         xs: 165,
@@ -101,9 +102,7 @@ function Table(params) {
         tag: "div",
         selector: "table-grid",
       })
-    // .on("scroll", function () {
-    //   adjustScrollBar(this.scrollLeft);
-    // });
+
 
     tableHeader = table.patternify({
       tag: "div",
@@ -461,18 +460,6 @@ function Table(params) {
         return eachWidth + "px";
       });
 
-      // SCROLL BAR
-      // const totalWidth = w - firstColumnWidth;
-      // const tBodyWidth = tBody.node().getBoundingClientRect().width;
-      // const scrollBarWidth = tBodyWidth / totalWidth;
-
-      // container
-      //   .selectAll(".scroll-bar")
-      //   .style("width", tBodyWidth * scrollBarWidth + "px");
-
-      // container
-      //   .selectAll(".scroll-bar-back")
-      //   .style("width", eachWidth * showNColumnsMobile + "px");
     } else {
       table.classed("responsive", false);
       table
@@ -552,7 +539,6 @@ function Table(params) {
     setTimeout(() => {
       const rowBeingHighlighted = tableRow.filter(predicate);
 
-      // if (isMobile(attrs.mobileBreakdown)) {
       if (rowBeingHighlighted.empty() && store.currentData.length < store.all_data.length) {
         // recursively showMore and search for city
         showMore();
@@ -562,14 +548,6 @@ function Table(params) {
         const coord = getTopCoord(null, index);
         tBody.node().scrollTop = +coord.replace("px", "");
       }
-      // } 
-      // else {
-      //   if (!rowBeingHighlighted.empty()) {
-      //     const index = +rowBeingHighlighted.attr("data-index");
-      //     const coord = getTopCoord(null, index);
-      //     tBody.node().scrollTop = +coord.replace("px", "");
-      //   }
-      // }
     }, 0);
   }
 
@@ -581,23 +559,11 @@ function Table(params) {
 
   main.render = function () {
     main();
-    // // window resize
-    // d3.select(window).on("resize." + attrs.id, function () {
-    //   if (timer) clearTimeout(timer);
-    //   timer = setTimeout(() => {
-    //     setDimensions();
-    //     drawAll(true);
-    //   }, 100);
-    // });
     return main;
   };
 
-  main.highlightRow = highlightRow;
 
-  main.toggleValues = (showValues) => {
-    attrs.showValues = showValues
-    updateRows()
-  }
+  main.highlightRow = highlightRow;
 
   return main;
 }

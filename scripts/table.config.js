@@ -6,30 +6,12 @@ function getFlag(country, className = 'small-flag') {
   </div>`
 }
 
+
+
 function mainHeaderTemplate() {
   return fakePromise(`
     <div class="h-16 flex justify-center items-center font-roboto">
-      <label class="flex justify-between items-center p-2 text-black cursor-pointer">
-        <span class="text-[12px] font-thin">Show values</span>
-        <input 
-          type="checkbox" 
-          class="sr-only peer" 
-          id="show_values" 
-        />
-        <div class="
-          w-14 h-8 
-          flex items-center flex-shrink-0 
-          ml-2 p-1 bg-palebrown rounded-full
-          after:w-6 
-          after:h-6
-          after:bg-white 
-          after:rounded-full 
-          after:shadow-md
-          after:content-['']
-          after:transition-all
-          peer-checked:after:translate-x-full
-          peer-checked:bg-orange
-        "></div>
+  
       </label>
     </div>
   `)
@@ -62,7 +44,7 @@ function cellTemplate(d, i, arr, showValue) {
   const scale = this.colorScale
   const rank = d[this.rankProp]
   const color = scale(rank)
-  const textColor = color === '#CD4A86' || color === '#0096B2' ? '#ffffff' : '#192435'
+  const textColor = '#ffffff'
   const prefix = d[this.rankProp + '_is_equal'] ? '=' : ''
 
   let value = showValue ? d[this.propName] : `${prefix}${format(rank)}`
@@ -82,14 +64,13 @@ function sortFunc(a, b, order) {
   return d3[orderFunc](a[this.rankProp], b[this.rankProp])
 }
 
-const colors = [
-  '#DC874B',
-  'rgba(220, 135, 75, 0.5)',
-  'rgba(98, 168, 198, 0.5)',
-  '#62A8C6',
-]
+// const colors = [
+//   '#124385',
+//   'rgba(18, 67, 133, 0.5)',
 
-function getHeaders(data) {
+// ]
+
+function getHeaders(data, colors) {
   const columns = [
     {
       id: 1,
@@ -121,11 +102,11 @@ function getHeaders(data) {
     },
     {
       id: 3,
-      name: 'Air Quality',
-      propName: 'Air Quality',
-      rankProp: 'Air Quality Rank',
+      name: 'British Cuisine',
+      propName: 'British Cuisine Availability',
+      rankProp: 'British Cuisine Rank',
       description: '',
-      icon: './images/airQuality.svg',
+      icon: './images/cuisine.svg',
       class: '',
       infoOrder: 1,
       format: ordinal_suffix_of,
@@ -135,11 +116,11 @@ function getHeaders(data) {
     },
     {
       id: 4,
-      name: 'Gyms & Fitness Clubs',
-      propName: 'Total Number of Gyms',
-      rankProp: 'Health Clubs and Gyms Rank',
+      name: 'English language',
+      propName: 'English Language Prevalence',
+      rankProp: 'English Language Prevalence Rank',
       description: '',
-      icon: './images/gym.svg',
+      icon: './images/language.svg',
       infoOrder: 2,
       class: '',
       format: ordinal_suffix_of,
@@ -149,10 +130,10 @@ function getHeaders(data) {
     },
     {
       id: 5,
-      name: 'Yoga & Pilates Classes',
-      propName: 'Total Number of Yoga & Pilates ',
-      rankProp: 'Yoga & Pilates Rank',
-      icon: './images/yoga.svg',
+      name: 'English speaking activities',
+      propName: 'ENGLISH SPEAKING ACTIVITIES',
+      rankProp: 'Things To Do Rank',
+      icon: './images/activity.svg',
       description: '',
       infoOrder: 3,
       class: '',
@@ -163,54 +144,12 @@ function getHeaders(data) {
     },
     {
       id: 6,
-      name: 'Wellness Retreats',
-      propName: 'Total Number of Wellness Retreats',
-      rankProp: 'Wellness Retreats Rank',
+      name: 'Rain fall',
+      propName: 'RAINFALL',
+      rankProp: 'Rainfall Rank',
       description: '',
-      icon: './images/retreats.svg',
+      icon: './images/rainfall.svg',
       infoOrder: 4,
-      class: '',
-      format: ordinal_suffix_of,
-      sort: sortFunc,
-      cellTemplate,
-      headerTemplate,
-    },
-    {
-      id: 7,
-      name: 'Veggie & Vegan restaurants',
-      propName: 'Total Number of Restaurants with Vegan and Vegetarian Options ',
-      rankProp: 'Resaurants with Vegan and Veggie Options Rank',
-      description: '',
-      icon: './images/vegan.svg',
-      infoOrder: 5,
-      class: '',
-      format: ordinal_suffix_of,
-      sort: sortFunc,
-      cellTemplate,
-      headerTemplate,
-    },
-    {
-      id: 8,
-      name: 'Hiking Trails',
-      propName: 'Total Number of Hiking Trails',
-      rankProp: 'Hiking Trails Rank',
-      description: '',
-      icon: './images/hiking.svg',
-      infoOrder: 5,
-      class: '',
-      format: ordinal_suffix_of,
-      sort: sortFunc,
-      cellTemplate,
-      headerTemplate,
-    },
-    {
-      id: 9,
-      name: 'Spas',
-      propName: 'Total Number of Spas',
-      rankProp: 'Spas Rank',
-      description: '',
-      icon: './images/spas.svg',
-      infoOrder: 5,
       class: '',
       format: ordinal_suffix_of,
       sort: sortFunc,

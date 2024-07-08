@@ -51,19 +51,36 @@
               Discover holiday destinations to either escape British culture or feel right at home with fish & chips and
               English speakers.
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
 
 
     <!-- content -->
-    <div class="bg-[#FFF9F3]">
-      <div class=" px-5 py-5 w-full">
-        <div class="max-w-[420px] mx-auto">
-          <select id="islands_sel"></select>
+    <div class="">
+      <div class="px-5 py-5 bg-[#F5EAE0]">
+        <div class="flex justify-center gap-2 items-center text-sm max-w-[420px] mx-auto">
+          <div class="font-roboto font-light">Local culture 🥘</div>
+          <div class="h-16 flex justify-center items-center font-roboto">
+            <label class="flex justify-between items-center p-2 text-black cursor-pointer">
+              <input type="checkbox" class="sr-only peer" id="show_values" />
+              <div class="
+                w-20 h-10 
+                flex items-center flex-shrink-0 
+                ml-2 p-1 border-[3px]  bg-white rounded-full      
+                after:w-8 
+                after:h-8
+                after:bg-black    
+                after:rounded-full 
+                after:shadow-md
+                after:content-['']
+                after:transition-all
+                peer-checked:after:translate-x-full
+                peer-checked:bg-white"></div>
+            </label>
+          </div>
+          <div class="font-roboto font-light">🇬🇧 Brits abroad</div>
         </div>
       </div>
 
@@ -72,20 +89,20 @@
         </div>
         <div class="px-5 sm:px-0">
           <div class="flex justify-between mb-1">
-            <label class="font-light text-xs">Lower score</label>
-            <label class="font-light text-xs">Higher score</label>
+            <label class="font-light text-xs">Local Culture</label>
+            <label class="font-light text-xs">British Culture</label>
           </div>
           <div class="flex w-full">
             <div class="w-1/4 bg-blue p-[5x] rounded-l"></div>
             <div class="w-1/4 bg-lightblue p-[5px]"></div>
-            <div class="w-1/4 bg-lightorange p-[5px]"></div>
-            <div class="w-1/4 bg-orange p-[5px] rounded-r"></div>
+            <div class="w-1/4 bg-lightred p-[5px]"></div>
+            <div class="w-1/4 bg-red p-[5px] rounded-r"></div>
           </div>
         </div>
       </div>
 
       <div class="w-full px-5 mt-5">
-        <div id="table" class="mx-auto"></div>
+        <div id="table" class="mx-auto max-w-[627px]"></div>
       </div>
     </div>
   </div>

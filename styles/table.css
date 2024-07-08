@@ -19,9 +19,9 @@
 /* END OF TABLE CONTAINERS */
 
 /* TABLE HEADER */
-.table-head.active .header-btn {
+/* .table-head.active .header-btn {
   background-color: #F5EAE0 !important;
-}
+} */
 
 .main-column .loc-header {
   height: 100%;
@@ -37,7 +37,7 @@
 
 .header-btn {
   border-radius: 8px;
-  background: #FFF;
+  /* background: #FFF; */
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
   border: none;
   width: 100%;
@@ -196,3 +196,8 @@
 }
 
 /* END OF SCROLL BAR */
+
+.toggle {
+  border: 3px solid;
+  border-image-source: linear-gradient(90deg, #124385 0%, #E20F12 99.65%);
+}

@@ -5,42 +5,35 @@ class App {
 
 	async loadDataAndInit() {
 		try {
-			const data = await d3.csv('./data/data_islands.csv', d3.autoType)
-			this.choices = initDropdown({
-				list: data
-					.slice()
-					.sort((a, b) => {
-						return d3.ascending(a.Island, b.Island)
-					})
-					.map(d => ({
-						label: `<div class="flex items-center">
-						<img src="./images/flags/l/${d['Country Code']}.svg" class="mr-3 w-[20px] h-[15px]" /> 
-						${d.Island}
-					</div>`,
-						value: d.Island,
-					})),
-				id: '#islands_sel',
-				searchEnabled: true,
-				placeholder: 'Find location',
-				searchPlaceholderValue: 'Search locations',
-				cb: island => this.highlightRow(island),
-			})
+			const data = await d3.csv('./data/islands.csv', d3.autoType)
+			const localData = data.slice(14, data.length)
+			const abroadData = data.slice(0, 14)
+			let chosenLocal = true
 			this.table = Table({
-				headers: getHeaders(data),
+				headers: getHeaders(data, ['#124385', 'rgba(18, 67, 133, 0.5)']),
 				container: '#table',
-				data: data,
-				doneHeadersLoading: () => this.attachEventHandlers(),
+				data: localData,
 			}).render()
+
+			d3.select('#show_values').on('change', e => {
+				chosenLocal = !chosenLocal
+				if (chosenLocal) {
+					this.table = Table({
+						headers: getHeaders(data, ['#124385', 'rgba(18, 67, 133, 0.5)']),
+						container: '#table',
+						data: localData,
+					}).render()
+				} else {
+					this.table = Table({
+						headers: getHeaders(data, ['#E20F12', 'rgba(226, 15, 18, 0.5)']),
+						container: '#table',
+						data: abroadData,
+					}).render()
+				}
+			})
 		} catch (e) {
 			console.error(e)
 		}
-	}
-
-	attachEventHandlers() {
-		d3.select('#show_values').on('change', e => {
-			const checked = e.target.checked
-			this.table.toggleValues(checked)
-		})
 	}
 
 	highlightRow(island) {
