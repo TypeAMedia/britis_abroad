@@ -197,7 +197,13 @@
 
 /* END OF SCROLL BAR */
 
-.toggle {
-  border: 3px solid;
-  border-image-source: linear-gradient(90deg, #124385 0%, #E20F12 99.65%);
+
+.gradient-border {
+  border-radius: 50px;
+  border: 3px solid transparent;
+  background: linear-gradient(90deg, #124385 0%, #E20F12 99.65%) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  pointer-events: none;
 }

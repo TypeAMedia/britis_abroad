@@ -64,20 +64,26 @@
           <div class="font-roboto font-light">Local culture 🥘</div>
           <div class="h-16 flex justify-center items-center font-roboto">
             <label class="flex justify-between items-center p-2 text-black cursor-pointer">
-              <input type="checkbox" class="sr-only peer" id="show_values" />
-              <div class="
-                w-20 h-10 
-                flex items-center flex-shrink-0 
-                ml-2 p-1 border-[3px]  bg-white rounded-full      
-                after:w-8 
-                after:h-8
-                after:bg-black    
-                after:rounded-full 
-                after:shadow-md
-                after:content-['']
-                after:transition-all
-                peer-checked:after:translate-x-full
-                peer-checked:bg-white"></div>
+              <div class="gradient-border">
+                <input type="checkbox" class="sr-only peer" id="show_values" />
+                <div class="
+              w-20 h-10 
+              flex items-center flex-shrink-0 
+              bg-white rounded-full
+              after:w-8 
+              after:h-8
+              p-2
+              after:bg-black    
+              after:rounded-full 
+              after:shadow-md
+              after:content-['']
+              after:transition-all
+              peer-checked:after:translate-x-full
+              peer-checked:bg-white
+              pointer-events-auto	
+             ">
+                </div>
+              </div>
             </label>
           </div>
           <div class="font-roboto font-light">🇬🇧 Brits abroad</div>
