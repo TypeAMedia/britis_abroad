@@ -1,15 +1,15 @@
 Island,Country,Country Code,Overall Rank,Average Rank,British Cuisine Availability,British Cuisine Rank,English Language Prevalence,English Language Prevalence Rank,ENGLISH SPEAKING ACTIVITIES,Things To Do Rank,RAINFALL,Rainfall Rank
-Paris,France,FR,1,6,52,2,1000,4,"3,486",3,641,15
-Phuket,Thailand,TH,2,7.75,59,6,1000,15,1472,9,2500,1
-Santorini,Greece,GR,3,8,5,8,1000,2,1410,5,554,17
-Cancun,Mexico,MX,4,9.5,0,24,1000,5,2901,4,1400,5
-Positano,Italy,IT,5,9.5,0,23,52,6,1283,1,1111,8
-Benidorm,Spain,ES,6,9.75,121,1,1000,1,46,12,260,25
-Ayia Napa,Cyprus,CY,7,10.25,9,3,153,7,80,10,432,21
-Lake Como,Italy,IT,8,10.25,1,19,585,8,579,8,1300,6
-Malta,Malta,MT,9,10.25,43,4,1000,10,575,11,600,16
-Capri,Italy,IT,10,10.75,0,27,122,3,648,2,938,11
-Barbados,Barbados,BB,11,11.25,10,13,"1,000",13,246,15,1525,4
-Zakynthos,Greece,GR,12,12,34,7,938,12,158,17,924,12
-Punta Cana,Dominican Republic,DO,13,13,1,21,1000,14,"2,033",7,988,10
-Kos,Greece,GR,14,13.5,11,10,1000,9,75,22,844,13
+Paris,France,FR,1,3.75,52,2,1000,2,"3,486",1,641,10
+Phuket,Thailand,TH,2,3.5,59,5,1000,4,1472,4,2500,1
+Santorini,Greece,GR,3,7.25,5,7,1000,5,1410,5,554,12
+Cancun,Mexico,MX,4,6.75,0,13,1000,9,2901,2,1400,3
+Positano,Italy,IT,5,9.25,0,12,52,14,1283,6,1111,5
+Benidorm,Spain,ES,6,7.5,121,1,1000,1,46,14,260,14
+Ayia Napa,Cyprus,CY,7,10,9,3,153,12,80,12,432,13
+Lake Como,Italy,IT,8,8.25,1,10,585,11,579,8,1300,4
+Malta,Malta,MT,9,6.75,43,4,1000,3,575,9,600,11
+Capri,Italy,IT,10,10.25,0,14,122,13,648,7,938,7
+Barbados,Barbados,BB,11,7,10,9,"1,000",7,246,10,1525,2
+Zakynthos,Greece,GR,12,8.75,34,6,938,10,158,11,924,8
+Punta Cana,Dominican Republic,DO,13,7,1,11,1000,8,"2,033",3,988,6
+Kos,Greece,GR,14,9,11,8,1000,6,75,13,844,9

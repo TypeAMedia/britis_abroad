@@ -20,6 +20,27 @@
 
 
   <section>
+    <iframe src="https://typeamedia.github.io/britis_abroad/" height="1070" id="iframe_id"
+      style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px"
+      marginwidth="0px" width="100%" allowfullscreen></iframe>
+    <script>
+      function resizeIt() {
+        var el = document.querySelector("#iframe_id");
+        var width = el.getBoundingClientRect().width;
+
+        var height = 1070;
+        if (width < 576) {
+          height = 1110;
+        }
+
+        el.setAttribute("height", height + "px");
+      }
+      setTimeout(resizeIt, 300);
+      window.addEventListener("resize", resizeIt);
+    </script>
+  </section>
+
+  <!-- <section>
     <iframe src="https://typeamedia.github.io/island_wellness_index/" height="1080" id="iframe_id"
       style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px"
       marginwidth="0px" width="100%" allowfullscreen></iframe>
@@ -38,7 +59,7 @@
       setTimeout(resizeIt, 300);
       window.addEventListener("resize", resizeIt);
     </script>
-  </section>
+  </section> -->
 
   <!-- <section>
     <iframe src="https://typeamedia.github.io/apres-ski-rank/map-version/" height="1134" id="iframe_id"

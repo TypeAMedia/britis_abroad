@@ -166,7 +166,7 @@ function getHeaders(data, colors) {
 
     if (!d.isMainColumn) {
       const extent = d3.extent(data, x => x[d.rankProp])
-      col.colorScale = d3.scaleQuantile(extent, colors)
+      col.colorScale = d3.scaleLog(extent, colors)
 
       data.forEach(datum => {
         datum[d.rankProp + '_is_equal'] = data.filter(x => x[d.rankProp] === datum[d.rankProp]).length > 1
